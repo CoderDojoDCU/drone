@@ -1,8 +1,8 @@
 const keypress = require('keypress');
 const Drone = require('parrot-minidrone');
 const drone = new Drone({
-  autoconnect: false,
-  droneFilter: "Mambo_471482"
+  autoconnect: true/*,
+  droneFilter: "Mambo_471482"*/
 });
 const commands = require('./fakeFlightCommands')(drone);
 keypress(process.stdin);
@@ -17,6 +17,7 @@ process.stdin.on('keypress', (ch, key) => {
    setTimeout(() => {
      commands.takeoff();
    }, 2000);
+/*
 
    setTimeout(() => {
      commands.goRight();
@@ -42,6 +43,7 @@ process.stdin.on('keypress', (ch, key) => {
    setTimeout(() => {
      commands.stabilize();
    }, 14000);
+*/
 
    setTimeout(() => {
      commands.land();

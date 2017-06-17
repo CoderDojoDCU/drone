@@ -20,19 +20,19 @@ module.exports = (drone) => {
     },
 
     goForward: () => {
-      drone.setFlightParams({...stableFlightParams, pitch: 100});
+      drone.setFlightParams(Object.assign({}, stableFlightParams, {pitch: 100}));
     },
 
     goBackwards: () => {
-      drone.setFlightParams({...stableFlightParams, pitch: -100});
+      drone.setFlightParams(Object.assign({}, stableFlightParams, {pitch: -100}));
     },
 
     goRight: () => {
-      drone.setFlightParams({...stableFlightParams, roll: 100});
+      drone.setFlightParams(Object.assign({}, stableFlightParams, {roll: 100}));
     },
 
     goLeft: () => {
-      drone.setFlightParams({...stableFlightParams, roll: -100});
+      drone.setFlightParams(Object.assign({}, stableFlightParams, {roll: -100}));
     },
     getReady: () => {
       drone.setFlightParams(stableFlightParams);
